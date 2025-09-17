@@ -5,7 +5,7 @@ const {Sequelize,DataTypes}=require("sequelize")
 
 
 
-
+//Database connection method
 
 const sequelize=new Sequelize("postgresql://postgres.wiaigcwcwikpuevbwmmv:ravieducation1234@aws-1-ap-south-1.pooler.supabase.com:6543/postgres")
 
