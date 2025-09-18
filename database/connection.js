@@ -1,5 +1,7 @@
 require("dotenv").config()
 const {Sequelize,DataTypes}=require("sequelize")
+const bookModel=require("./models/book.model")
+
 
 
 
@@ -22,4 +24,11 @@ sequelize.authenticate()
 const db={}
 db.Sequelize=Sequelize
 db.sequelize=sequelize
+
+ db.book=bookModel(sequelize,DataTypes)
+ sequelize.sync({alter:false}).then(()=>{
+    console.log("migrate vyo...")
+ })
+
+ 
 module.exports=db
