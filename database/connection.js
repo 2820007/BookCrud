@@ -18,17 +18,18 @@ sequelize.authenticate()
     
 })
 .catch((err)=>{
-    console.log("Error while database connection"+err)
+    console.log("Error while database connection "+err)
 })
 
 const db={}
 db.Sequelize=Sequelize
 db.sequelize=sequelize
 
- db.book=bookModel(sequelize,DataTypes)
+ db.books=bookModel(sequelize,DataTypes)
  sequelize.sync({alter:false}).then(()=>{
+    
     console.log("migrate vyo...")
  })
 
- 
+
 module.exports=db
