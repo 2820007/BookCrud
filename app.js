@@ -1,21 +1,15 @@
 const express=require("express")
-const { books } = require("./database/connection.js")
+
+const bookRouter=require("./routers/book.router.js")
 
 require("./database/connection.js")
 const app=express()
+app.use(express.json());
 
 
-app.get("/books", async (req,res)=>{
-    const data=await books.findAll()
-    res.json({
-        message:"books fetched successfully...",
-        data
-    })
-})
+app.use("/api/",bookRouter)
 
-app.get("/about",(req,res)=>{
-    res.send("about page")
-})
+
 
 
 app.listen(3000, ()=>{

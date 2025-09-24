@@ -5,15 +5,15 @@ const bookModel=(sequelize,DataTypes)=>{
     const Book=sequelize.define("book",{
         bookName:{
             type:DataTypes.STRING,
-            allowedNull:false
+            allowNull:false
         },
         bookPrise:{
             type:DataTypes.INTEGER,
-            allowedNull:false,
+            allowNull:false,
         },
         bookAuthor:{
             type:DataTypes.STRING,
-            allowedNull:false
+            allowNull:false
         }
         ,
         bookGenre:{
